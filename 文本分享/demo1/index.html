@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <p id="oP">其意义在于，它宣告了野生华南虎这一珍稀物种，还没有在中华大地上灭绝，为人类对这一珍稀物种进行保护提供了第一手的科学依据。 至于照片本身并没有过高的艺术欣赏价值，相关部门机构对周正龙进行奖励，是对他爱国壮举、重大科学发现的奖励，而不是购买他的照片。 既然2007版的野生华南虎照片得不到某些戴着有色眼镜的人的认可，那么，矢志不移、百折不挠、大难不死的周正龙，再去寻找老虎，拍摄老虎，用高清晰、更有力的照片等证据</p>
+        <div id="oDiv"><img src="images/share.gif" alt="#"></div>
+        <script>
+function selectText(){
+    if(document.selection){
+        return document.selection.createRange().text;
+    }else{
+        return window.getSelection().toString();
+    }
+}
+var oP=document.getElementById("oP");
+var oDiv=document.getElementById("oDiv");
+oP.onmouseup=function(e){
+    var e=e||window.event;
+    var x=e.clientX,
+        y=e.clientY;
+    if(selectText().length>10){
+        setTimeout(function(){
+            oDiv.style.display="block";
+            oDiv.style.left=x+"px";
+            oDiv.style.top=y+"px";
+        },200);
+    }
+}
+document.body.onclick=function(){
+    oDiv.style.display="none";
+}
+oDiv.onclick=function(){
+    window.location.href = 'http://v.t.sina.com.cn/share/share.php?searchPic=false&title=' + selectText() + '&url=http://blog.sina.com.cn/s/blog_4ccdaee70100y7w0.html?tj=1';
+}
+        </script>
+    </body>
+</html>

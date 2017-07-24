@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#box1{
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+
+}
+#box2{
+    width: 100px;
+    height: 100px;
+    background: blue;
+    position: absolute;
+    left: 100px;
+}

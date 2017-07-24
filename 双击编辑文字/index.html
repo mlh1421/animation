@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id='obj'>javascript</p>
+    <script>
+        var obj = document.getElementById('obj');
+
+        obj.onclick = function () {
+            this.style.color = 'red';
+        }
+        obj.click();
+        function bj(id) {
+            var obj = document.getElementById(id);
+            obj.ondblclick = function () {
+                var input = document.createElement('input');
+                var oldText=this.innerText;
+                input.type = 'text';
+                input.value = oldText ? oldText : input.value;
+                this.innerText = '';
+                this.appendChild(input);
+                var that = this;
+                input.onblur = function () {//失去焦点事件
+                    that.innerHTML = this.value;
+                    //this.value = this.value ? this.value : that.innerHTML;
+                }
+                input.focus();
+            }
+            //var input=document.getElementsByClassName('input')[0];
+        }
+        bj('obj');
+//function(){}
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+button{
+    border:none;
+}
+        </style>
+    </head>
+    <body>
+        <p id="p">《新浪微博社区公约(征求意见稿)》意见征求</p>
+        <textarea id="txar" name="txar" cols="30" rows="10"></textarea>
+        <button id="btn">发布</button>
+        <script>
+
+var p=document.getElementById("p"),
+    ie=!-[1,],
+    btn=document.getElementById("btn"),
+    txar=document.getElementById("txar");
+
+txar.onfocus=function(){
+    if(this.value==""){
+        p.innerHTML="打击虚假消息，建设文明微博，还可以输入<span id='sp'>140</span>字";
+    }
+}
+txar.onblur=function(){
+    if(this.value==""){
+        p.innerHTML="《新浪微博社区公约(征求意见稿)》意见征求";
+    }
+}
+if(ie){
+    txar.onpropertychange=change;
+}else{
+    txar.oninput=change;
+}
+function change(){
+    var sp=document.getElementById("sp");
+    if(this.value.length<=140&&this.value.length>0){
+        sp.innerHTML=140-this.value.length;
+        btn.style.backgroundColor="green";
+        btn.style.color="white";
+    }else if(this.value.length>140){
+        sp.style.color="red";
+        btn.style.backgroundColor="yellow";
+        btn.style.color="green";
+    }else{
+        btn.style.backgroundColor="";
+        btn.style.color="";
+    }
+}
+btn.onclick=function(){
+    if(txar.value.length>0&&txar.value.length<=140){
+        alert("发布成功");
+    }else{
+        txar.twinkle=twinkle;
+        txar.twinkle();
+    }
+}
+function twinkle(){
+    var i=1;
+    var that=this;
+    var timer=setInterval(function () {
+        i++;
+        if(i==5){
+            clearInterval(timer);
+        }
+        if(i%2==0){
+            that.style.backgroundColor="red";
+        }else{
+            that.style.backgroundColor="white";
+        }
+    },100);
+}
+
+        </script>
+    </body>
+</html>

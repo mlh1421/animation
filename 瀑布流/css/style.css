@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{list-style: none;}
+.clearfix:after{
+    content:".";
+    display:block;
+    height: 0;
+    visibility:hidden;
+    clear:both;
+}
+.box{
+    width: 690px;
+    margin: 0 auto;
+}
+ul{
+    float: left;
+    margin-left: 5px;
+}
+li{
+    margin-top: 20px;
+}
+li img{
+    vertical-align:middle;
+}
+

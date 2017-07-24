@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+li img{
+    vertical-align: middle;
+}
+.clearfix:after{
+content: ".";
+height: 0;
+display: block;
+visibility: hidden;
+clear: both;
+}
+#box{
+width: 1920px;
+    height: 396px;
+    position: relative;
+    overflow: hidden;
+}
+ul{
+    height: 396px;
+    width: 5760px;
+    position: absolute;
+}
+li{
+    width: 1920px;
+    height: 396px;
+    float: left;
+}

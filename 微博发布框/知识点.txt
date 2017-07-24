@@ -1,0 +1,7 @@
+var txar=document.getElementById("txar");
+txar.onpropertychange=function(){
+    console.log(txar.value);
+}
+oninput事件
+focus事件
+blur事件

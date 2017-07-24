@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+ul{width: 200px;}
+li{height: 20px;overflow: hidden;border:1px solid silver;position: relative;}
+p{line-height: 20px;position: absolute;}
+p:last-child{bottom:-20px;}
+        </style>
+    </head>
+    <body>
+        <ul id="list">
+            <li>
+                <p>11111111111</p>
+                <p>22222222222</p>
+            </li>
+            <li>
+                <p>33333333333</p>
+                <p>44444444444</p>
+            </li>
+            <li>
+                <p>55555555555</p>
+                <p>66666666666</p>
+            </li>
+            <li>
+                <p>77777777777</p>
+                <p>88888888888</p>
+            </li>
+        </ul>
+        <script src="animate.js"></script>
+        <script>
+var lis=document.getElementById("list").getElementsByTagName("li");
+for(var i=0;i<lis.length;i++){
+    lis[i].Ps=lis[i].getElementsByTagName("p");
+    console.log(lis[i].Ps);
+    startMove(lis[i].Ps);
+}
+function startMove(obj){
+    var j=0;
+    setInterval(function(){
+        if(j%2==0){
+            obj[0].animate({"top":"-20px"});
+            obj[1].animate({"top":"0px"});
+        }else{
+            obj[0].animate({"top":"0px"});
+            obj[1].animate({"top":"20px"});
+        }
+        j++;
+    },1000);
+}
+        </script>
+    </body>
+</html>

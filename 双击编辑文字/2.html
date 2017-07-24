@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+input{
+    display:none;
+}
+        </style>
+    </head>
+    <body>
+        <div id="app">javascript<input type="text">
+        </div>
+        <script>
+var obj=document.getElementById("app");
+obj.ondblclick=function(){
+    console.log(this.innerText);
+    var oldText=this.innerText;
+    this.innerHTML='<input type="text">';
+    var input=this.getElementsByTagName('input')[0];
+    input.style.display='block';
+    input.value=oldText;
+    input.focus();
+
+}
+        </script>
+    </body>
+</html>

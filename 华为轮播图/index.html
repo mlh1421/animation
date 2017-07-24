@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/animate.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <ul class="clearfix">
+            <li><img src="images/1.jpg" alt="#"></li>
+            <li><img src="images/2.jpg" alt="#"></li>
+            <li><img src="images/3.jpg" alt="#"></li>
+        </ul>
+    </div>
+    <script>
+        var box = document.getElementById("box");
+        var ul = box.getElementsByTagName("ul")[0];
+        var lis = ul.getElementsByTagName("li");
+        setInterval(function () {
+            for (var j = 0; j < 1; j++) {
+                var oli = lis[j].cloneNode(true);
+                ul.appendChild(oli);
+            }
+            getWidth();
+            ul.animate({ "left": "-1920px" }, function () {
+                for (var j = 0; j < 1; j++) {
+                    ul.removeChild(lis[j]);
+                    ul.style.left = 0;
+                }
+                getWidth();
+            });
+        }, 2000);
+        function getWidth() {
+            ul.style.width = lis[0].offsetWidth * lis.length + "px";
+        }
+    </script>
+</body>
+</html>

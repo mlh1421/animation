@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p id="p">kjasfdhsdfsdgfdfghdfhfghfgh</p>
+    <script>
+    var p=document.getElementById("p");
+p.onmouseup=function(){
+    console.log(selectText());
+}
+function selectText(){
+    if(document.selection){
+        return document.selection.createRange().text;
+    }else{
+        return window.getSelection().toString();
+    }
+}
+    </script>
+</body>
+</html>

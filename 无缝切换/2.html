@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+ul{position: absolute;}
+li{width: 100px;height: 100px;float: left;text-align:center;line-height: 100px;box-sizing: border-box;border:1px solid red;}
+#box{width: 400px;height: 100px;overflow: hidden;position: relative;border:1px solid blue;margin:20px auto;}
+.clearfix:after{display:block;content:".";height: 0;visibility:hidden;clear:both;}
+div.box2{width: 400px;margin: 0 auto;}
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <ul id="list" class="clearfix">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+        <div class="box2">
+            <button id="btn" class="btn btn-primary btn-block">切换</button>
+        </div>
+        <script src="animate.js"></script>
+        <script>
+var box=document.getElementById("box");
+var li=document.getElementsByTagName("li");
+var ul=document.getElementById("list");
+var btn=document.getElementById("btn");
+var iTrue=true;
+function getWidth(){
+    ul.style.width = li.length*(li[0].offsetWidth) + 'px';
+}
+getWidth();
+btn.onclick=function(){
+    if(iTrue){
+        iTrue=false;
+        for(var i=0;i<4;i++){
+            var oli=li[i].cloneNode(true);
+            ul.appendChild(oli);
+            getWidth();
+        }
+    }
+    ul.animate({"left":"-400px"},function(){
+        for(var i=0;i<4;i++){
+            ul.removeChild(li[0]);
+            ul.style.left=0;
+        }
+        iTrue=true;
+    });
+}
+        </script>
+    </body>
+</html>

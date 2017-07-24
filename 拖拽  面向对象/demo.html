@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+#box{
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+}
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <script>
+var box=document.getElementById("box");
+box.onmousedown=function(e){
+    var e=e||window.e;
+    var that=this;
+    var diffX=e.clientX-this.offsetLeft;//要明白为什么不能加到mousemove中
+    var diffY=e.clientY-this.offsetTop;
+    document.onmousemove=function(e){
+        var e=e||window.e;
+        var left=(e.clientX-diffX)+"px";
+        var top=(e.clientY-diffY)+"px";
+        that.style.left=left;
+        that.style.top=top;
+    }
+}
+document.onmouseup=function(){
+    //box.onmousedown=null;
+    this.onmousemove=null;
+}
+        </script>
+    </body>
+</html>

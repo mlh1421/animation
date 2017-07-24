@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#page{
+    margin: 30px auto;
+}
+a{
+    margin: 0 3px;
+    font-size: 20px;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #eee;
+}

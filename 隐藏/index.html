@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+.obj{
+    width: 100px;
+    height: 100px;
+    background: red;
+}
+        </style>
+    </head>
+    <body>
+        <button class="btn">jjjjjj</button>
+        <div class="obj"></div>
+        <script>
+
+var obj=document.getElementsByClassName("obj")[0];
+console.log(obj);
+var btn=document.getElementsByClassName("btn")[0];
+btn.onclick=function(){
+    obj.style.display="none";
+}
+        </script>
+    </body>
+</html>
